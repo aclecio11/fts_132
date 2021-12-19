@@ -10,16 +10,27 @@ def multiplicar_dois_numeros(a, b):
     return a * b
 
 def dividir_dois_numeros(a, b):
-    return a / b
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return 'Não é possivel dividir por zero'
 
 def elevar_um_numero_ao_outro(a, b):
         return a ** b
 
+def calcular_area_de_um_triangulo(B, h):
+    return (B * h)/2
+
+def calcular_area_de_um_retangulo(B, h):
+    return B * h
+
+def calcular_area_de_um_quadrado(l):
+    return l ** 2
 
     #CHAMADAS(garçom):
 if __name__ == '__main__':
 
-       resultado = somar_dois_numeros(89,8)
+       resultado = somar_dois_numeros(89, 8)
        print(f'A soma é {resultado}')
 
        resultado = subtrair_dois_numeros(59, 17)
@@ -34,79 +45,14 @@ if __name__ == '__main__':
        resultado = elevar_um_numero_ao_outro(3, 4)
        print(f'A exponenciação é {resultado}')
 
-    #Teste( degustador):
-def testar_somar_dois_numeros():
-    # 1ª Etapa - Configura / Prepara
-    #Dados / Valores
-    #Entradas / Input
-    a = 8
-    b = 9
-    #Saída / Output
-    resultado_esperado = 17
+       resultado = calcular_area_de_um_triangulo(5, 8)
+       print(f'A area do triâgulo é {resultado}')
 
-    # 2ª Etapa: Executa
-    resultado_atual = somar_dois_numeros(a,b)
+       resultado = calcular_area_de_um_retangulo(8, 3)
+       print(f'A area do retângulo é {resultado}')
 
-    # 3ª Etapa: Confirma / Check / Valida
-    assert resultado_atual == resultado_esperado
+       resultado = calcular_area_de_um_quadrado(9)
+       print(f'A area do quadrado é {resultado}')
 
-def testar_subtrair_dois_numeros():
-    # 1ª Etapa - Configura / Prepara
-    #Dados / Valores
-    #Entradas / Input
-    a = 100
-    b = 47
-    #Saída / Output
-    resultado_esperado = 53
 
-    # 2ª Etapa: Executa
-    resultado_atual = subtrair_dois_numeros(a,b)
-
-    # 3ª Etapa: Confirma / Check / Valida
-    assert resultado_atual == resultado_esperado
-
-def testar_multiplicar_dois_numeros():
-    # 1ª Etapa - Configura / Prepara
-    #Dados / Valores
-    #Entradas / Input
-    a = 10
-    b = 47
-    #Saída / Output
-    resultado_esperado = 470
-
-    # 2ª Etapa: Executa
-    resultado_atual = multiplicar_dois_numeros(a,b)
-
-    # 3ª Etapa: Confirma / Check / Valida
-    assert resultado_atual == resultado_esperado
-
-def testar_dividir_dois_numeros():
-    # 1ª Etapa - Configura / Prepara
-    #Dados / Valores
-    #Entradas / Input
-    a = 100
-    b = 10
-    #Saída / Output
-    resultado_esperado = 10
-
-    # 2ª Etapa: Executa
-    resultado_atual = dividir_dois_numeros(a,b)
-
-    # 3ª Etapa: Confirma / Check / Valida
-    assert resultado_atual == resultado_esperado
-
-def testar_elevar_um_numero_ao_outro():
-    # 1ª Etapa - Configura / Prepara
-    #Dados / Valores
-    #Entradas / Input
-    a = 2
-    b = 3
-    #Saída / Output
-    resultado_esperado = 8
-
-    # 2ª Etapa: Executa
-    resultado_atual = elevar_um_numero_ao_outro(a,b)
-
-    # 3ª Etapa: Confirma / Check / Valida
-    assert resultado_atual == resultado_esperado
 
