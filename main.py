@@ -1,7 +1,10 @@
 import pytest
     #FUNÇÕES( cozinheiro):
+a = int(input('Digite um numero: '))
+b = int(input('Digite outro numero: '))
 def somar_dois_numeros(a,b):
     return a + b
+print('Soma = ', somar_dois_numeros(a, b))
 
 def subtrair_dois_numeros(a, b):
     return a - b
