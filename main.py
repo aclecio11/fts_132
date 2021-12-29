@@ -1,10 +1,10 @@
 import pytest
     #FUNÇÕES( cozinheiro):
-a = int(input('Digite um numero: '))
-b = int(input('Digite outro numero: '))
+#a = int(input('Digite um numero: '))
+#b = int(input('Digite outro numero: '))
 def somar_dois_numeros(a,b):
     return a + b
-print('Soma = ', somar_dois_numeros(a, b))
+# print('Soma = ', somar_dois_numeros(a, b))
 
 def subtrair_dois_numeros(a, b):
     return a - b
@@ -29,6 +29,9 @@ def calcular_area_de_um_retangulo(B, h):
 
 def calcular_area_de_um_quadrado(l):
     return l ** 2
+
+def calcular_area_de_um_circulo(r):
+   return 3.14 * r ** 2
 
     #CHAMADAS(garçom):
 if __name__ == '__main__':
@@ -56,6 +59,9 @@ if __name__ == '__main__':
 
        resultado = calcular_area_de_um_quadrado(9)
        print(f'A area do quadrado é {resultado}')
+
+       resultado = calcular_area_de_um_circulo(9)
+       print(f'A area do circulo é {resultado}')
 
 
 

@@ -2,7 +2,7 @@ import pytest
 
 from main import somar_dois_numeros, subtrair_dois_numeros, multiplicar_dois_numeros, dividir_dois_numeros, \
     elevar_um_numero_ao_outro, calcular_area_de_um_triangulo, calcular_area_de_um_retangulo, \
-    calcular_area_de_um_quadrado
+    calcular_area_de_um_quadrado, calcular_area_de_um_circulo
 
 
 def testar_somar_dois_numeros():
@@ -120,6 +120,20 @@ def testar_calcular_area_de_um_quadrado():
 
     # 2ª Etapa: Executa
     resultado_atual = calcular_area_de_um_quadrado(l)
+
+    # 3ª Etapa: Confirma / Check / Valida
+    assert resultado_atual == resultado_esperado
+
+def testar_calcular_area_de_um_circulo():
+    # 1ª Etapa - Configura / Prepara
+    #Dados / Valores
+    #Entradas / Input
+    r = 1
+    #Saída / Output
+    resultado_esperado = 3.14
+
+    # 2ª Etapa: Executa
+    resultado_atual = calcular_area_de_um_circulo(r)
 
     # 3ª Etapa: Confirma / Check / Valida
     assert resultado_atual == resultado_esperado
