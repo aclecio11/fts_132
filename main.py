@@ -31,7 +31,10 @@ def calcular_area_de_um_quadrado(l):
     return l ** 2
 
 def calcular_area_de_um_circulo(r):
-   return 3.14 * r ** 2
+    try:
+        return 3.14 * r ** 2
+    except TypeError:
+        return 'Falha de cálculo - Raio não é um número'
 
     #CHAMADAS(garçom):
 if __name__ == '__main__':

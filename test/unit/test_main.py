@@ -124,13 +124,23 @@ def testar_calcular_area_de_um_quadrado():
     # 3ª Etapa: Confirma / Check / Valida
     assert resultado_atual == resultado_esperado
 
-def testar_calcular_area_de_um_circulo():
+#anotação para usar como massa de teste
+@pytest.mark.parametrize('r, resultado_esperado' ,[
+    #valores:
+            (1, 3.14),  #teste n°1
+            (2, 12.56), #teste n°2
+            (3, 28.26), #teste n°3
+            (4, 50.24),  #teste n°4
+            ('a','Falha de cálculo - Raio não é um número'), #teste nº5
+            (' ','Falha de cálculo - Raio não é um número'), #teste nº5
+                                ])
+def testar_calcular_area_de_um_circulo(r, resultado_esperado):
     # 1ª Etapa - Configura / Prepara
     #Dados / Valores
     #Entradas / Input
-    r = 1
+   ## r = 1
     #Saída / Output
-    resultado_esperado = 3.14
+    ##resultado_esperado = 3.14
 
     # 2ª Etapa: Executa
     resultado_atual = calcular_area_de_um_circulo(r)
