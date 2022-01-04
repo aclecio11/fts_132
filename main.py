@@ -18,17 +18,32 @@ def dividir_dois_numeros(a, b):
     except ZeroDivisionError:
         return 'Não é possivel dividir por zero'
 
+    except TypeError:
+        return 'Falha de cálculo - dado digitado não é um número'
+
 def elevar_um_numero_ao_outro(a, b):
-        return a ** b
+        try:
+            return a ** b
+        except TypeError:
+            return 'Falha de cálculo - dado digitado não é um número'
 
 def calcular_area_de_um_triangulo(B, h):
-    return (B * h)/2
+    try:
+        return B * h / 2
+    except TypeError:
+        return 'Falha de cálculo - dado digitado não é um número'
 
 def calcular_area_de_um_retangulo(B, h):
-    return B * h
+    try:
+        return B * h
+    except TypeError:
+        return 'Falha de cálculo - dado digitado não é um número'
 
 def calcular_area_de_um_quadrado(l):
-    return l ** 2
+    try:
+        return l ** 2
+    except TypeError:
+        return 'Falha de cálculo - lado não é um número'
 
 def calcular_area_de_um_circulo(r):
     try:
