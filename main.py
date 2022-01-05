@@ -66,7 +66,7 @@ def calcular_volume_de_um_paralelograma(l, c, h):
     try:
         return l * c * h
     except TypeError:
-        return 'Falha de cálculo - Raio não é um número'
+        return 'Falha de cálculo - dado digitado não é um número'
 
 
 
