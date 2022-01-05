@@ -5,14 +5,25 @@ from main import somar_dois_numeros, subtrair_dois_numeros, multiplicar_dois_num
     calcular_area_de_um_quadrado, calcular_area_de_um_circulo
 
 
-def testar_somar_dois_numeros():
+# anotação para usar como massa de teste
+@pytest.mark.parametrize('a, b, resultado_esperado', [
+        # valores:
+        (-10, 5, -5),   # teste n°1
+        (2, 5, 7),      # teste n°2
+        (-10, 10, 0),   # teste n°3
+        (40, 5, 45),    # teste n°4
+        ('a', 'b', 'Falha de cálculo - dado digitado não é um número'),  # teste nº5
+        (' ', '&', 'Falha de cálculo - dado digitado não é um número'),  # teste nº6
+                                        ])
+
+def testar_somar_dois_numeros(a, b, resultado_esperado):
     # 1ª Etapa - Configura / Prepara
     #Dados / Valores
     #Entradas / Input
-    a = 8
-    b = 9
+    #a = 8
+    #b = 9
     #Saída / Output
-    resultado_esperado = 17
+    #resultado_esperado = 17
 
     # 2ª Etapa: Executa
     resultado_atual = somar_dois_numeros(a, b)
@@ -20,14 +31,25 @@ def testar_somar_dois_numeros():
     # 3ª Etapa: Confirma / Check / Valida
     assert resultado_atual == resultado_esperado
 
-def testar_subtrair_dois_numeros():
+# anotação para usar como massa de teste
+@pytest.mark.parametrize('a, b, resultado_esperado', [
+        # valores:
+        (10, 5, 5),  # teste n°1
+        (2, 5, -3),  # teste n°2
+        (10, 10, 0),  # teste n°3
+        (40, 5, 35),  # teste n°4
+        ('a', 'b', 'Falha de cálculo - dado digitado não é um número'),  # teste nº5
+        (' ', '&', 'Falha de cálculo - dado digitado não é um número'),  # teste nº6
+                                        ])
+
+def testar_subtrair_dois_numeros(a, b, resultado_esperado):
     # 1ª Etapa - Configura / Prepara
     #Dados / Valores
     #Entradas / Input
-    a = 100
-    b = 47
+    #a = 100
+    #b = 47
     #Saída / Output
-    resultado_esperado = 53
+    #resultado_esperado = 53
 
     # 2ª Etapa: Executa
     resultado_atual = subtrair_dois_numeros(a, b)
@@ -35,14 +57,25 @@ def testar_subtrair_dois_numeros():
     # 3ª Etapa: Confirma / Check / Valida
     assert resultado_atual == resultado_esperado
 
-def testar_multiplicar_dois_numeros():
+#anotação para usar como massa de teste
+@pytest.mark.parametrize('a, b, resultado_esperado' ,[
+    #valores:
+            (10, 5, 50),  #teste n°1
+            (2, 5, 10), #teste n°2
+            (10, 4, 40), #teste n°3
+            (40, 5, 200),  #teste n°4
+            ('a', 'b', 'Falha de cálculo - dado digitado não é um número'), #teste nº5
+            (' ','&','Falha de cálculo - dado digitado não é um número'), #teste nº6
+                                ])
+
+def testar_multiplicar_dois_numeros(a, b, resultado_esperado):
     # 1ª Etapa - Configura / Prepara
     #Dados / Valores
     #Entradas / Input
-    a = 10
-    b = 47
+    #a = 10
+    #b = 47
     #Saída / Output
-    resultado_esperado = 470
+    #resultado_esperado = 470
 
     # 2ª Etapa: Executa
     resultado_atual = multiplicar_dois_numeros(a, b)
@@ -58,7 +91,7 @@ def testar_multiplicar_dois_numeros():
             (10, 4, 2.5), #teste n°3
             (40, 5, 8),  #teste n°4
             ('a', 'b', 'Falha de cálculo - dado digitado não é um número'), #teste nº5
-            (' ','&','Falha de cálculo - dado digitado não é um número'), #teste nº5
+            (' ','&','Falha de cálculo - dado digitado não é um número'), #teste nº6
                                 ])
 
 def testar_dividir_dois_numeros(a, b, resultado_esperado):
@@ -84,7 +117,7 @@ def testar_dividir_dois_numeros(a, b, resultado_esperado):
             (3, 4, 81), #teste n°3
             (4, 3, 64),  #teste n°4
             ('a', 'b', 'Falha de cálculo - dado digitado não é um número'), #teste nº5
-            (' ','&','Falha de cálculo - dado digitado não é um número'), #teste nº5
+            (' ','&','Falha de cálculo - dado digitado não é um número'), #teste nº6
                                 ])
 
 def testar_elevar_um_numero_ao_outro(a, b, resultado_esperado):
@@ -110,7 +143,7 @@ def testar_elevar_um_numero_ao_outro(a, b, resultado_esperado):
             (3, 4, 6), #teste n°3
             (4, 5, 10),  #teste n°4
             ('a', 'b', 'Falha de cálculo - dado digitado não é um número'), #teste nº5
-            (' ','&','Falha de cálculo - dado digitado não é um número'), #teste nº5
+            (' ','&','Falha de cálculo - dado digitado não é um número'), #teste nº6
                                 ])
 
 def testar_calcular_area_de_um_triangulo(B, h, resultado_esperado):
@@ -137,7 +170,7 @@ def testar_calcular_area_de_um_triangulo(B, h, resultado_esperado):
             (3, 4, 12), #teste n°3
             (4, 5, 20),  #teste n°4
             ('a', 'b', 'Falha de cálculo - dado digitado não é um número'), #teste nº5
-            (' ','&','Falha de cálculo - dado digitado não é um número'), #teste nº5
+            (' ','&','Falha de cálculo - dado digitado não é um número'), #teste nº6
                                 ])
 
 def testar_calcular_area_de_um_retangulo(B, h, resultado_esperado):
@@ -162,7 +195,7 @@ def testar_calcular_area_de_um_retangulo(B, h, resultado_esperado):
             (3, 9), #teste n°3
             (4, 16),  #teste n°4
             ('a','Falha de cálculo - lado não é um número'), #teste nº5
-            (' ','Falha de cálculo - lado não é um número'),  #teste nº5
+            (' ','Falha de cálculo - lado não é um número'),  #teste nº6
                            ])
 
 def testar_calcular_area_de_um_quadrado(l, resultado_esperado):
@@ -187,7 +220,7 @@ def testar_calcular_area_de_um_quadrado(l, resultado_esperado):
             (3, 28.26), #teste n°3
             (4, 50.24),  #teste n°4
             ('a','Falha de cálculo - Raio não é um número'), #teste nº5
-            (' ','Falha de cálculo - Raio não é um número'), #teste nº5
+            (' ','Falha de cálculo - Raio não é um número'), #teste nº6
                                 ])
 def testar_calcular_area_de_um_circulo(r, resultado_esperado):
     # 1ª Etapa - Configura / Prepara

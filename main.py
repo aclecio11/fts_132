@@ -3,14 +3,25 @@ import pytest
 #a = int(input('Digite um numero: '))
 #b = int(input('Digite outro numero: '))
 def somar_dois_numeros(a,b):
-    return a + b
+    try:
+        return a ++ b
+    except TypeError:
+        return 'Falha de cálculo - dado digitado não é um número'
+
 # print('Soma = ', somar_dois_numeros(a, b))
 
 def subtrair_dois_numeros(a, b):
-    return a - b
+    try:
+        return a - b
+    except TypeError:
+        return 'Falha de cálculo - dado digitado não é um número'
 
 def multiplicar_dois_numeros(a, b):
-    return a * b
+    try:
+        return a * b
+    except TypeError:
+        return 'Falha de cálculo - dado digitado não é um número'
+
 
 def dividir_dois_numeros(a, b):
     try:
