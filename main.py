@@ -62,6 +62,15 @@ def calcular_area_de_um_circulo(r):
     except TypeError:
         return 'Falha de cálculo - Raio não é um número'
 
+def calcular_volume_de_um_paralelograma(l, c, h):
+    try:
+        return l * c * h
+    except TypeError:
+        return 'Falha de cálculo - Raio não é um número'
+
+
+
+
     #CHAMADAS(garçom):
 if __name__ == '__main__':
 

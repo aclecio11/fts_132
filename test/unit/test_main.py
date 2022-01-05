@@ -2,17 +2,17 @@ import pytest
 
 from main import somar_dois_numeros, subtrair_dois_numeros, multiplicar_dois_numeros, dividir_dois_numeros, \
     elevar_um_numero_ao_outro, calcular_area_de_um_triangulo, calcular_area_de_um_retangulo, \
-    calcular_area_de_um_quadrado, calcular_area_de_um_circulo
+    calcular_area_de_um_quadrado, calcular_area_de_um_circulo, calcular_volume_de_um_paralelograma
 
 
 # anotação para usar como massa de teste
 @pytest.mark.parametrize('a, b, resultado_esperado', [
         # valores:
-        (-10, 5, -5),   # teste n°1
+        (-10, 5, -5),   # teste n°1 teste positivo
         (2, 5, 7),      # teste n°2
         (-10, 10, 0),   # teste n°3
         (40, 5, 45),    # teste n°4
-        ('a', 'b', 'Falha de cálculo - dado digitado não é um número'),  # teste nº5
+        ('a', 'b', 'Falha de cálculo - dado digitado não é um número'),  # teste nº5 teste negativo
         (' ', '&', 'Falha de cálculo - dado digitado não é um número'),  # teste nº6
                                         ])
 
@@ -234,4 +234,17 @@ def testar_calcular_area_de_um_circulo(r, resultado_esperado):
     resultado_atual = calcular_area_de_um_circulo(r)
 
     # 3ª Etapa: Confirma / Check / Valida
+    assert resultado_atual == resultado_esperado
+
+def testar_calcular_volume_de_um_paralelograma():
+    # 1 configura:
+    l = 5
+    c = 10
+    h = 2
+    resultado_esperado = 100
+
+    #2 executa:
+    resultado_atual = calcular_volume_de_um_paralelograma(l, c, h)
+
+    #3 valida:
     assert resultado_atual == resultado_esperado
