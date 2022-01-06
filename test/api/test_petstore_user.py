@@ -76,4 +76,58 @@ def testar_consultar_usuario():
 
 ##################################################################################
 
+def testar_alterar_usuario():
+    # Configura:
+    username = 'aclecio'
+    status_code_esperado = 200
+    code_esperado = 200
+    type_esperado = 'unknown'
+    mensagem_esperada = '1011'
 
+    # Executa:
+    resposta = requests.put(  # Faz a requisição ,passando:
+        url=f'{base_url}/{username}',  # o end point da API
+        data=open('C:/Users/aclecio11/PycharmProjects/fts_132/test/db/user2.json', 'rb'),  # O body JSON
+        headers=headers  # O header com o Content type
+    )
+    # Formatação:
+    corpo_da_resposta = resposta.json()
+    print(resposta)  # Resposta bruta
+    print(resposta.status_code)  # Status code
+    print(corpo_da_resposta)  # Resposta formatada
+
+    # Valida:
+    assert resposta.status_code == status_code_esperado
+    assert corpo_da_resposta['code'] == code_esperado
+    assert corpo_da_resposta['type'] == type_esperado
+    assert corpo_da_resposta['message'] == mensagem_esperada
+
+##################################################################################
+
+
+def testar_excluir_usuario():
+    # Configura:
+    username = 'aclecio'
+    status_code_esperado = 200
+    code_esperado = 200
+    type_esperado = 'unknown'
+    mensagem_esperada = 'aclecio'
+
+    # Executa:
+    resposta = requests.delete(  # Faz a requisição ,passando:
+        url=f'{base_url}/{username}',  # o end point da API
+        headers=headers  # O header com o Content type
+    )
+    # Formatação:
+    corpo_da_resposta = resposta.json()
+    print(resposta)  # Resposta bruta
+    print(resposta.status_code)  # Status code
+    print(corpo_da_resposta)  # Resposta formatada
+
+    # Valida:
+    assert resposta.status_code == status_code_esperado
+    assert corpo_da_resposta['code'] == code_esperado
+    assert corpo_da_resposta['type'] == type_esperado
+    assert corpo_da_resposta['message'] == mensagem_esperada
+
+##################################################################################
