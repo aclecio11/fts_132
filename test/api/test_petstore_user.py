@@ -1,4 +1,5 @@
 # Bibliotecas:
+import time
 
 import pytest  # Framework de Teste  unitario - Engine
 import requests  # Framework de Teste de API - Requests / Responses
@@ -177,4 +178,13 @@ def testar_login_do_usuario():
     mensagem_recebida = corpo_da_resposta['message']
     token_usuario = mensagem_recebida[23:37]
     print(f'O token do usuario eh: {token_usuario}')
+
+
+    #Exemplo:
+    frase = 'Saldo é : R$ 1985,00'
+    valor = frase[10:20]
+    print(f'O valor é: {valor}')
+
+
+
 
