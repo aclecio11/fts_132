@@ -1,0 +1,18 @@
+{
+  "id": 10111,
+  "category": {
+    "id": 1,
+    "name": "cachorro"
+  },
+  "name": "chocolate",
+  "photoUrls": [
+    "https://static.vix.com/pt/sites/default/files/f/foto-concurso-cachorro-nao-usar-11-0718-1400x1080.jpg"
+  ],
+  "tags": [
+    {
+      "id": 3,
+      "name": "reprodutor"
+    }
+  ],
+  "status": "available"
+}
