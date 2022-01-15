@@ -23,7 +23,7 @@ class TestConsultarMantis():
         self.driver.quit()
 
     def test_1_iterasys(self):
-        self.driver.get("https://iterasys.com.br/")
+        self.driver.get("https://iterasys.com.br")
         self.driver.set_window_size(1346, 708)
         self.driver.find_element(By.ID, "searchtext").send_keys("Mantis")
         self.driver.find_element(By.CSS_SELECTOR, ".fa-search").click()                    #time.sleep(3) #pausa forçada "alfinete" - sempre remover antes de salvar no repositório

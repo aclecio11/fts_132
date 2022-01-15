@@ -171,7 +171,6 @@ def testar_login_do_usuario():
     assert resposta.status_code == status_code_esperado
     assert corpo_da_resposta['code'] == code_esperado
     assert corpo_da_resposta['type'] == type_esperado
-    #assert corpo_da_resposta['message'] == inicio_mensagem_esperada
     assert 'logged in user session:' in inicio_mensagem_esperada
 
     #5 Extrair uma informação da mensagem 'logged in user session:'
