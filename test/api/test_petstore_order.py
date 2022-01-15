@@ -9,7 +9,7 @@ headers = {'Content-Type': 'application/json'}  # Nos .asmx seria 'text/xml'
 
 
 def teste_criar_order():
-    # 1 Configura: dados de entrada vem do json
+    # 1 Configura: dados de entrada vem do json - isso é a response que vem da api
     status_code_esperado = 200
     order_id_esperado = 5
     pet_id_esperado = 10111
