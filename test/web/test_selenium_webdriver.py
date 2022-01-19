@@ -13,7 +13,7 @@ class Test_Selenium_Webdriver():  # A classe começa com maiuscula
         self.driver = webdriver.Chrome('C:/Users/aclecio11/PycharmProjects/fts_132/drivers/chrome/97/chromedriver.exe')
         self.driver.implicitly_wait(30)  # O selenium vai esperar ate 30 segundos pelos elementos
         self.driver.maximize_window()  # Maximiza a janela do navegador no teste
-        self.vars = {}
+
 
     # Definição do fim - Executa depois do teste:
     def teardown_method(self, method):
@@ -23,7 +23,11 @@ class Test_Selenium_Webdriver():  # A classe começa com maiuscula
     # Definição do teste:
     def testar_comprar_curso_mantis(self):
         self.driver.get('https://www.iterasys.com.br')  # Abre o navegador nesse endereço
-        # O selenium escreve 'mantis' na cixa de pesquisa
+        # O selenium clica na caixa de pesquisa
+        self.driver.find_element(By.ID, 'searchtext').click()
+        # O selenium apaga o texto da caixa de pesquisa
+        self.driver.find_element(By.ID, 'searchtext').clear()
+        # O selenium escreve 'mantis' na caixa de pesquisa
         self.driver.find_element(By.ID, 'searchtext').send_keys('mantis')
         # O selenium clica no botao da lupa:
         self.driver.find_element(By.ID, 'btn_form_search').click()
