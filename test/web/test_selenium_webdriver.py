@@ -21,18 +21,21 @@ class Test_Selenium_Webdriver():  # A classe começa com maiuscula
         self.driver.quit()
 
     # Definição do teste:
-    @pytest.mark.parametrize('termo, curso, valor',[
-        ('mantis', 'Mantis', 'R$ 59,99'),               # teste1
-        ('ctfl', 'Preparatório CTFL', 'R$ 199,00'),     # teste2
+    @pytest.mark.parametrize('id, termo, curso, valor',[
+        ('1', 'mantis', 'Mantis', 'R$ 59,99'),               # teste1
+        ('2', 'ctfl', 'Preparatório CTFL', 'R$ 199,00'),     # teste2
     ])
-    def testar_comprar_curso_mantis(self, termo, curso, valor):
+    def testar_comprar_curso(self, id, termo, curso, valor):
+        caminho_print = 'C:/Users/aclecio11/PycharmProjects/fts_132/prints/'
         self.driver.get('https://www.iterasys.com.br')  # Abre o navegador nesse endereço
+        self.driver.get_screenshot_as_file(f'{caminho_print}teste {id} - passo 1 - homepage.png')
         # O selenium clica na caixa de pesquisa
         self.driver.find_element(By.ID, 'searchtext').click()
         # O selenium apaga o texto da caixa de pesquisa
         self.driver.find_element(By.ID, 'searchtext').clear()
-        # O selenium escreve 'mantis' na caixa de pesquisa
+        # O selenium escreve o termo na caixa de pesquisa
         self.driver.find_element(By.ID, 'searchtext').send_keys(termo)
+        self.driver.get_screenshot_as_file(f'{caminho_print}teste {id} - passo 2 - pesquisa_por_nome.png')
         # O selenium clica no botao da lupa:
         self.driver.find_element(By.ID, 'btn_form_search').click()
         # o selenium vai clicar no "matricule-se"
@@ -41,3 +44,5 @@ class Test_Selenium_Webdriver():  # A classe começa com maiuscula
         assert self.driver.find_element(By.CSS_SELECTOR, 'span.item-title').text == curso
         # O selenium valida o preço:
         assert self.driver.find_element(By.CSS_SELECTOR, 'span.new-price').text == valor
+
+
